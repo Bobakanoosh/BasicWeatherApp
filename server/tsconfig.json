@@ -1,0 +1,25 @@
+{
+	"ts-node": {
+		// Faster if set to true, but no type checking (only intellisense will type check)
+		"transpileOnly": false,
+		"files": true
+	},
+	"compilerOptions": {
+		"target": "es6",
+		"allowSyntheticDefaultImports": true,
+		"module": "ESNext",
+		"strict": true,
+		"outDir": "dist",
+		"types": ["node"],
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"paths": {
+			"@/*": ["src/*"]
+		},
+		"baseUrl": "."
+	},
+	"include": ["./**/*", "*.d.ts"],
+	"exclude": ["dist", "node_modules"]
+}
