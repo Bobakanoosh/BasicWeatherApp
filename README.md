@@ -2,6 +2,9 @@
 
 A basic weather app that interfaces with the AccuWeather API to proxy requests to a Vue.js frontend
 
+![image](https://user-images.githubusercontent.com/10647192/140250816-e3ca6c85-0363-48ec-b3a8-d62d287104aa.png)
+![image](https://user-images.githubusercontent.com/10647192/140250542-09d20993-4208-4a7c-a878-ed65bcc4276a.png)
+
 ## Note:
 
 Both the server and client use `pnpm` instead of `npm`.
