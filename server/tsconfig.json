@@ -15,9 +15,6 @@
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"esModuleInterop": true,
-		"paths": {
-			"@/*": ["src/*"]
-		},
 		"baseUrl": "."
 	},
 	"include": ["./**/*", "*.d.ts"],
