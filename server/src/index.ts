@@ -3,11 +3,14 @@ import { config } from "dotenv";
 import express from "express";
 import { errorHandler } from "./middleware/errorHandler.middleware.js";
 import { AxiosError } from "axios";
+import cors from "cors";
 
 config();
 
 const app = express();
-const port = 3000;
+const port = 4000;
+
+app.use(cors());
 
 app.get("/v1/location/search", async (req, res, next) => {
 	try {
@@ -18,7 +21,7 @@ app.get("/v1/location/search", async (req, res, next) => {
 			},
 		});
 
-		res.status(200).send({ data: response.data });
+		res.status(200).send(response.data);
 	} catch (e) {
 		const err = new Error("Error processing request");
 		console.error(e);
@@ -40,7 +43,7 @@ app.get("/v1/forecast/daily/:location", async (req, res, next) => {
 			},
 		});
 
-		res.status(200).send({ data: response.data });
+		res.status(200).send(response.data);
 	} catch (e) {
 		if ((e as AxiosError).response?.data?.Message?.includes("LocationKey is invalid")) {
 			res.status(400);
