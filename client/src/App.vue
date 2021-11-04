@@ -1,21 +1,31 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from "./components/HelloWorld.vue";
+import { searchLocation } from "./api/api.service";
+
+const search = ref<string>();
+const error = ref<string>();
+
+function submitSearch() {
+	if (!search.value) {
+		error.value = "Invalid input";
+		return;
+	}
+
+	if (search.value) {
+		searchLocation(search.value).then(({ data: location }) => {
+			console.log(location);
+		});
+	}
+}
 </script>
 
 <template>
-	<img alt="Vue logo" src="./assets/logo.png" class="bg-red-500" />
-	<HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+	<div class="mt-16 flex flex-col items-center justify-center w-full">
+		<h1>Weather App</h1>
+		<div class="flex">
+			<input v-model="search" type="text" placeholder="Location" />
+			<button @click="submitSearch">Search</button>
+		</div>
+	</div>
 </template>
 
-<style>
-#app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
-}
-</style>
+<style></style>
