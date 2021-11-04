@@ -10,10 +10,11 @@ export default defineConfig({
 		WindiCSS(),
 		AutoImport({
 			include: [
+				/\.ts$/,
 				/\.vue$/,
 				/\.vue\?vue/, // .vue
 			],
-			imports: ["vue", "vue-router"],
+			imports: ["vue"],
 			dts: true,
 		}),
 	],
