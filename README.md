@@ -28,10 +28,11 @@ To install it, simply run `npm i -g pnpm`. This is not an absolute requirement b
 
 ### Frontend
 
-1. Run `pnpm i`
-2. Run `pnpm build`
-3. Run `pnpm serve`, this will serve the project from the built files as if it was production
-4. Visit http://localhost:5000/ by default
+1. Create a `.env` file that follows the format of the `.env.example`, and make sure to insert `http://localhost:4000` for the API_URL (this is where the backend is hosted locally)
+2. Run `pnpm i`
+3. Run `pnpm build`
+4. Run `pnpm serve`, this will serve the project from the built files as if it was production
+5. Visit http://localhost:5000/ by default
 
 ## Technologies used:
 
